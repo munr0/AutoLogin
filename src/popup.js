@@ -20,8 +20,10 @@ document.addEventListener("DOMContentLoaded", () =>
         const olduser = unEncrypt(data.u)
         const oldpass = unEncrypt(data.p)
 
-        document.getElementById("username").value = olduser
-        document.getElementById("password").placeholder = '*'.repeat(oldpass.length)
+        if (olduser)
+            document.getElementById("username").value = olduser
+        if (oldpass)
+            document.getElementById("password").placeholder = '*'.repeat(oldpass.length)
     })()
 })
 
