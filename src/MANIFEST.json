@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+
+    "name": "UBC AutoLogin",
+    "version": "1.0",
+    "description": "A lightweight utility to automatically log you into UBC services using your CWL.",
+    "icons": { "128": "icon.png" },
+    "action": {
+        "default_title": "Configure CWL",
+        "default_popup": "popup.html"
+    },
+    "permissions": [ "storage" ],
+    "content_scripts": [ {
+            "matches": [ "https://authentication.ubc.ca/*", "https://webmail.student.ubc.ca/owa/auth/*", "https://ipeer.elearning.ubc.ca/login" ],
+            "js": [ "content_script.js" ]
+        } ]
+}
